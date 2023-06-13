@@ -1,7 +1,7 @@
 @import url("newdefault.css");
 
 body {
-    background: url("../homepage/bg.svg");
+    background: #282936;
     background-color: hsl(231deg 14% 57%);
     background-size: cover;
     backdrop-filter: blur(3vw);
@@ -71,7 +71,7 @@ div.banner:hover h1 {
 }
 
 #title {
-    background-image: url("../homepage/swoosh.png");
+    background-image: url("../homepage/Readme_pic.png");
 
     background-size: cover;
     image-rendering: pixelated;

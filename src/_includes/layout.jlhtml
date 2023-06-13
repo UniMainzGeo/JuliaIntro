@@ -83,18 +83,6 @@ $(pluto_head)
                 </div>
             </li>
             <li>
-                <div class="track-chooser">
-                    <label>
-                    <h2>Choose your track:</h2>
-                    <select>
-                        <option value="">Choose...</option>
-                        <option value="julia">💻 Julia programming</option>
-                        <option value="math">🎨 Mathematics</option>
-                        <option value="climate">🌎 Climate science</option>
-                        <option value="data">📊 Data science</option>
-                    </select>
-                    </label>
-                </div>
             </li>
         $(let
             sidebar_data = Base.include(@__MODULE__, joinpath(@__DIR__, "..", "sidebar data.jl"))

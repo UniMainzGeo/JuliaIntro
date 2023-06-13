@@ -9,7 +9,8 @@ layout: "layout.jlhtml"
 </div>
 <!-- <img src="$(root_url)/assets/JGU_MAGMA.svg" class="logo"> -->
 
-<blockquote class="banner">
+<!-- <blockquote class="banner"> -->
+<blockquote class="banner wide">
     <p>This is a test website for the interactive Julia programming at the Institute of Geosciences at the University of Mainz. This website was inspired by <blockquote style='font-style: normal;'>Some material on this website is based on: <br><em><b>Computational Thinking</b>, a live online Julia/Pluto textbook</em>. (<a href="computationalthinking.mit.edu">computationalthinking.mit.edu</a>)</blockquote> </p>
     <img src="$(root_url)/assets/JGU_MAGMA.svg">
     <!-- <p>Upon completion, students are well trained to be scientific “trilinguals”, seeing and experimenting with mathematics interactively as math is meant to be seen, and ready to participate and contribute to open source development of large projects and ecosystems.</p> -->

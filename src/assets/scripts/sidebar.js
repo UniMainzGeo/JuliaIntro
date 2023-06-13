@@ -14,21 +14,21 @@ window.addEventListener("click", function (e) {
     }
 })
 
-document.querySelectorAll(".track-chooser select").forEach((trackSelect) => {
-    const ontrack = () => {
-        let track = trackSelect.value
+// document.querySelectorAll(".track-chooser select").forEach((trackSelect) => {
+//     const ontrack = () => {
+//         let track = trackSelect.value
 
-        localStorage.setItem("chosen track", track)
+//         localStorage.setItem("chosen track", track)
 
-        let lectures_homeworks = Array.from(sidebar.querySelectorAll(".lecture,.homework"))
+//         let lectures_homeworks = Array.from(sidebar.querySelectorAll(".lecture,.homework"))
 
-        lectures_homeworks.forEach((el) => {
-            let intrack = track === "" || el.classList.contains(`tag_track_${track}`) || el.classList.contains(`tag_welcome`)
-            el.classList.toggle("not_in_track", !intrack)
-        })
-    }
+//         lectures_homeworks.forEach((el) => {
+//             let intrack = track === "" || el.classList.contains(`tag_track_${track}`) || el.classList.contains(`tag_welcome`)
+//             el.classList.toggle("not_in_track", !intrack)
+//         })
+//     }
 
-    trackSelect.value = localStorage.getItem("chosen track")
-    ontrack()
-    trackSelect.addEventListener("change", ontrack)
-})
+//     trackSelect.value = localStorage.getItem("chosen track")
+//     ontrack()
+//     trackSelect.addEventListener("change", ontrack)
+// })
