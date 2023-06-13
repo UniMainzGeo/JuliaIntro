@@ -62,5 +62,4 @@ jobs:
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}
                   branch: SS23-output
-                  folder: .
-                  single-commit: true
+                  folder: www/SS23
