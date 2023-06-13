@@ -3,7 +3,7 @@ name: SS 23 - Export Pluto notebooks & Deploy
 on:
     push:
         branches:
-            - SS23
+            - main
     workflow_dispatch:
 concurrency:
     group: export
