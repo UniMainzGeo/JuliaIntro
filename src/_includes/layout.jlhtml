@@ -29,7 +29,7 @@ $(begin
 end)<html lang="en">
 <head>
 
-<title>$(f("title", splitext(basename(page.input.relative_path))[1])) — Interactive Computational Thinking — MIT</title>
+<title>$(f("title", splitext(basename(page.input.relative_path))[1])) — Julia for Geodynamics — JGU</title>
 $(let d = f("description", nothing)
     if d !== nothing
         @htl("""<meta name="description" content=$(d) />""")
@@ -38,8 +38,8 @@ end)
 
 <link rel="root" href="$(root_url)" />
 
-<link rel="icon" href="$(root_url)/assets/favicon.ico" />
-<link rel="icon" href="$(root_url)/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="$(root_url)/assets/jgu_logo.ico" />
+<link rel="icon" href="$(root_url)/assets/jgu_logo.jpg" type="image/svg+xml">
 
 <link rel="stylesheet" href="$(root_url)/assets/styles/index.css" type="text/css" />
 <link rel="stylesheet" href="$(root_url)/assets/styles/layout.css" type="text/css" />
