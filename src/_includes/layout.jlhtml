@@ -130,13 +130,9 @@ $(pluto_head)
                 <li><hr></li>
             <li class="sidebar-about">
                 <div class="semester-details">
-                    <a href="$(root_url)/semesters/">Fall 2023</a>
-                    <div class="course-numbers"><span>18.S191</span> / <span>6.S083</span> / <span>22.S092</span></div>
+                    <a href="$(root_url)/semesters/">Summer Term 2023</a>
                 </div>
                 <div class="logos">
-                    <picture title="Massachusetts Institute of Technology">
-                        <img src="$(root_url)/assets/jgu_logo.jpg">
-                    </picture>
                     <picture title="Julia Programming Language">
                         <source srcset="$(root_url)/assets/julia-logo-dark.svg" media="(prefers-color-scheme: dark)" />
                         <img src="$(root_url)/assets/julia-logo-color.svg">
