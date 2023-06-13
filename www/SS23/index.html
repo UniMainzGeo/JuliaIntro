@@ -1,0 +1,294 @@
+<!DOCTYPE html><html lang="en">
+<head>
+
+<title>index — Julia for Geodynamics — JGU</title>
+
+
+<link rel="root" href="." />
+
+<link rel="icon" href="./assets/jgu_logo.ico" />
+
+<link rel="stylesheet" href="./assets/styles/index.css" type="text/css" />
+<link rel="stylesheet" href="./assets/styles/layout.css" type="text/css" />
+<script src="./assets/scripts/sidebar.js" type="module"></script>
+
+<link rel="pp-search-data" href="./pp_search_data.json" />
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" integrity="sha256-DFDZACuFeAqEKv/7Vnu1Tt5ALa58bcWZegGGFNgET8g=" crossorigin="anonymous" defer></script>
+<script src="./assets/scripts/search.js" type="module" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.js" integrity="sha256-wwYlfEzWnCf2nFlIQptfFKdUmBeH5d3G7C2352FdpWE=" crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.css" integrity="sha256-99PgDZnzzjO63EyMRZfwIIA+i+OS2wDx6k+9Eo7JDKo=" crossorigin="anonymous">
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8572a580bead4b729ad55779ba3a1cd6"}'></script>
+
+<script data-goatcounter="https://computationalthinking-stats.plutojl.org/count" async src="//computationalthinking-stats.plutojl.org/count.js"></script>
+
+<meta name="viewport" content="width=device-width"><meta charset="utf-8">
+<meta name="pluto-insertion-spot-meta">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="white"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2928"><meta name="color-scheme" content="light dark"><link rel="pluto-logo-big" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/logo.004c1d7c.svg" integrity="sha384-GkQkODcGxsrSRJCkeakBXihum0GUM44cwBgKyutDimectXCbCgj6Vu3jlrueqEcN" crossorigin="anonymous"><link rel="pluto-logo-small" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/favicon_unsaturated.d1387b25.svg" integrity="sha384-omwjH+Qy3hpAVf5FYd/pkaDBuVAfsEDRN7eBxEA8Ek00OAWP+aiV+GpEYk3I7lyo" crossorigin="anonymous"><script type="module" src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/editor.4d2be9f0.js" integrity="sha384-CuFAr2AFtrPmN0FVO2PrGqg83e0KHFguP+4bn4V96uoNA6iydUywNAMKS3FYP5bU" crossorigin="anonymous"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/juliamono.c6034ab4.css" integrity="sha384-n0za6lUXlyf4XC+nGkZWj3TLDnRbNpAcoi4PZGSlQMPoyqGa9kGY+ZXkUgZGIhQt" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/editor.9402a72e.css" integrity="sha384-NJUInpSDijrLS5DfgY1ITvzJ/8HJmHa62lN/13hYf8FknsJEMJdwqQWtyreOFUZ3" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/vollkorn.089565a8.css" integrity="sha384-jnV/84VtSgBLF70H+s2rxJcOUZIMDR+X/ElFZA83i9ZtZSWiIMFAgPyrWkOJV08q" crossorigin="anonymous"><script defer="">console.log("Pluto.jl, by Fons van der Plas (https://github.com/fonsp), Mikołaj Bochenski (https://github.com/malyvsen), Michiel Dral (https://github.com/dralletje) and friends 🌈");</script><script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/editor.4b96dd74.js" defer="" integrity="sha384-Y+UtWANyXLeovyghpAI8j9/VZXWboD6G5ZCckOsJO99PawAh/utJxFikf62WBaSu" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/editor.9f9dc874.js" defer="" integrity="sha384-tkFo1EK72I9JvoTmHFa199dfRzW8mkXPUkHb/N7UhYI+bxKzX3Kh8LNCZz1ltsFF" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/editor.90ede145.js" defer="" integrity="sha384-CuNU9gQg6fa/yynNqNWjHWzPm4nj+d7O6+HXsNGSqClhs/bYQIbBC3Lw/kh8Ukui" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/editor.dbeed08a.js" defer="" integrity="sha384-1BEdQwXfZi4ZpsNV8w1X8pQcVK1/DS/+/M8OTo3gol7mdEspSN7nT6llX57NQCSt" crossorigin="anonymous"></script><script id="iframe-resizer-content-window-script" src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/editor.6386bd9d.js" crossorigin="anonymous" defer="" integrity="sha384-tgN2a0VDi/lCYwZuDqT7L+A/Y/9kpxf3HV7zv2BJ5Fu7zW0EClq0nM4crfK3TRPs"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/editor.20c99564.css" type="text/css" integrity="sha384-ZeUE8EilG635rOn5WI6cu08sHKMkb04kTkNSWBN8oKlADao2MBRWNIn9Yhaddbi6" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/editor.14f23ca4.css" type="text/css" media="all" data-pluto-file="hide-ui" integrity="sha384-++EDAMZbJynENol9onosKuuWP4ex4rhT9Rl/oELs6oVltwZdU9DC0W1nYT4Ttb9V" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/editor.99402935.css" type="text/css" integrity="sha384-Wl7QT6vOzvYxGbF4LKAXVRihsch7DCr4GeiXwOS273IU4E5g7HMSBkrbI9GFP+qI" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/editor.1f4cf2ca.css" type="text/css" integrity="sha384-lBSBsn8FT1UzGOsNVudfV8RSHQEuNWqrCb6xQnF10uvF9AiCzYsCRXvKlhtQvV3c" crossorigin="anonymous"><link rel="preload" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/juliamono.c6034ab4.css" as="style" integrity="sha384-n0za6lUXlyf4XC+nGkZWj3TLDnRbNpAcoi4PZGSlQMPoyqGa9kGY+ZXkUgZGIhQt" crossorigin="anonymous"><link rel="preload" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/vollkorn.089565a8.css" as="style" integrity="sha384-jnV/84VtSgBLF70H+s2rxJcOUZIMDR+X/ElFZA83i9ZtZSWiIMFAgPyrWkOJV08q" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/editor.e82e08bd.css" type="text/css" integrity="sha384-7YN+h8b6N4N65qk8TG/J2KPF95D8z3sGNd06rokz4CX9oWu0KnRAF5cVWu3BkkaN" crossorigin="anonymous"><script data-pluto-file="launch-parameters">
+window.pluto_notebook_id = undefined;
+window.pluto_isolated_cell_ids = undefined;
+window.pluto_notebookfile = undefined;
+window.pluto_disable_ui = true;
+window.pluto_slider_server_url = undefined;
+window.pluto_binder_url = "https://mybinder.org/v2/gh/fonsp/pluto-on-binder/v0.19.26";
+window.pluto_statefile = undefined;
+window.pluto_preamble_html = undefined;
+</script>
+
+<meta name="pluto-insertion-spot-parameters">
+<script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/editor.4cc32d5e.js" type="module" defer="" integrity="sha384-uO9JZqUJ/LQii9Yve/KDYftnIv9nqZoi18lxb25ReYsao7kx6IBm1Ze9JaoquFfz" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.26/frontend-dist/editor.8a3292da.js" integrity="sha384-itp4oE2PRbSrrTHVpWh8sqAuVUsz7ja6L2Dgp/JRfMCD2AwVdTk56K96POF3oLmu" crossorigin="anonymous"></script><script type="text/javascript" id="MathJax-script" integrity="sha384-4kE/rQ11E8xT9QgrCBTyvenkuPfQo8rXYQvJZuMgxyPOoUfpatjQPlgdv6V5yhUK" crossorigin="" not-the-src-yet="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg-full.js" async=""></script>
+
+</head>
+<body>
+    <div id="pages-layout">
+        <button id="toggle-nav" title="Open navigation"></button>
+        <nav id="pages-sidebar">
+        <div>
+        <ul>
+            <li class="sidebar-about">
+                <div class="course-title">
+                    <h1><a href="."><span>Julia for</span> <span>Geodynamics</span></a></h1>
+                    <h2><span>Start your modelling journey now!</span></h2>
+                </div>
+                <div class="authors">
+                    by <a href="https://www.geosciences.uni-mainz.de/geophysics-and-geodynamics/team/univ-prof-dr-boris-kaus/">Boris Kaus</a>, <a href="https://ptsolvers.github.io/GPU4GEO/">Ludovic Raess</a>, <a href="https://ptsolvers.github.io/GPU4GEO/">Ivan Utkin</a>; <a href="https://github.com/aelligp">Pascal Aellig</a>
+                </div>
+            </li>
+            <li>
+                <div class="search-bar">
+                    <form action="./search" method="GET">
+                        <input type="search" name="q" placeholder="Search...">
+                        <input type=submit value="🔎">
+                    </form>
+                </div>
+            </li>
+            <li>
+            </li>
+        <li>
+<h3>Welcome</h3>
+<ul>
+<li class=' lecture tag_welcome'><a href='./installation/'><span class="entry-number"></span> Software installation</a></li><li class=' lecture tag_welcome'><a href='./cheatsheets/'><span class="entry-number"></span> Cheatsheets</a></li><li class=' lecture tag_welcome'><a href='./test/' title='This is the first step towards programming in Julia'><span class="entry-number"></span> Introduction</a></li>
+</ul>
+</li>
+
+                <li><hr></li>
+            <li class="sidebar-about">
+                <div class="semester-details">
+                    <a href="./semesters/">Fall 2023</a>
+                    <div class="course-numbers"><span>18.S191</span> / <span>6.S083</span> / <span>22.S092</span></div>
+                </div>
+                <div class="logos">
+                    <picture title="Massachusetts Institute of Technology">
+                        <img src="./assets/jgu_logo.jpg">
+                    </picture>
+                    <picture title="Julia Programming Language">
+                        <source srcset="./assets/julia-logo-dark.svg" media="(prefers-color-scheme: dark)" />
+                        <img src="./assets/julia-logo-color.svg">
+                    </picture>
+                </div>
+            </li>
+        </ul>
+        </div>
+        </nav>
+        <div id="pages-content">
+           
+        <link rel="stylesheet" href="./assets/styles/homepage.css" type="text/css" />
+<div id="title" class="banner">
+    <h1>Julia for Geodynamics: <strong>A new approach to computational Geodynamcis</strong></h1>
+</div>
+<!-- <img src="./assets/JGU_MAGMA.svg" class="logo"> -->
+<!-- <blockquote class="banner"> -->
+<blockquote class="banner wide">
+    <p>This is a test website for the interactive Julia programming at the Institute of Geosciences at the University of Mainz. This website was inspired by <blockquote style='font-style: normal;'>Some material on this website is based on: <br><em><b>Computational Thinking</b>, a live online Julia/Pluto textbook</em>. (<a href="computationalthinking.mit.edu">computationalthinking.mit.edu</a>)</blockquote> </p>
+    <img src="./assets/JGU_MAGMA.svg">
+    <!-- <p>Upon completion, students are well trained to be scientific “trilinguals”, seeing and experimenting with mathematics interactively as math is meant to be seen, and ready to participate and contribute to open source development of large projects and ecosystems.</p> -->
+</blockquote>
+<main class="homepage">
+    <div class="subjectscontainer wide">
+        <h1>Highlights</h1>
+        <div class="contain">
+            <section>
+                <div class="content">
+                    <h2>Real-world problems</h2>
+                    <p>We will take applications such as climate change and show how you can participate in the big open source community looking to find solutions to challenging problems with exposure to github and parallel computing.</p>
+                </div>
+                <div class="preview">
+                    <img src="https://user-images.githubusercontent.com/6933510/136199652-0a1275ad-8452-4c9b-ac68-d33ed22f1d17.gif">
+                </div>
+            </section>
+            <section>
+                <div class="content">
+                    <h2>Corgi in the washing machine</h2>
+                    <p>You will learn mathematical ideas by immersion into the mathematical process, performing experiments, seeing the connections, and seeing just how much fun math can be.</p>
+                </div>
+                <div class="preview">
+                    <img src="https://user-images.githubusercontent.com/6933510/136203450-f1d38de6-f43c-4bfc-a987-f954e7a9da2e.png">
+                </div>
+            </section>
+            <section>
+                <div class="content">
+                    <h2>Revolutionary interactivity</h2>
+                    <p>Our course material is built using real code, and instead of a book, we have a series of interactive <em>notebooks</em>. <strong>On our website, you can play with sliders, buttons and images to interact with our simulations.</strong> You can even go further, and modify and run any code on our website!</p>
+                </div>
+                <div class="preview">
+                    <img src="https://user-images.githubusercontent.com/6933510/136196607-16207911-53be-4abb-b90e-d46c946e6aaf.gif">
+                </div>
+            </section>
+            <section>
+                <div class="content">
+                    <h2>Learning Julia</h2>
+                    <p>In literature it’s not enough to just know the technicalities of grammar. In music it’s not enough to learn the scales. The goal is to communicate experiences and emotions. For a computer scientist, it’s not enough to write a working program, the program should be <strong>written with beautiful high level abstractions that speak to your audience</strong>. This class will show you how.</p>
+                </div>
+                <div class="preview">
+                    <img src="https://user-images.githubusercontent.com/6933510/136203632-29ce0a96-5a34-46ad-a996-de55b3bcd380.png">
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="">
+        <h1>Why is this course different?</h1>
+        <!-- <div class="asdf">
+            <thingy></thingy>
+        </div> -->
+        <p class="twocols contain shadow">We believe many classes cover what we call the vertices — specific topics in computer science, math, or an application.
+            A student is left to figure out the edges, meaning the intellectual connections between the topics on their own as they mature.
+            Some classes have you learn a math topic and you can then for homework implement an algorithm or application. The goal
+            for this class, is to accelerate the process by which a student can participate in the exciting world of software development
+            be it the big open source universe or privately, by seeing how math with CS abstractions can allow for applications that can
+            be part of a big huge ecosystem rather than a one-off homework.
+            <br>
+            … and have more fun in the process!
+        </p>
+    </div>
+    <div class="wide subjectscontainer">
+        <h1>Subjects</h1>
+        <div class="subjects">
+</div>
+    </div>
+    <div>
+        <h1>Three fields, one course</h1>
+        <div class="scrolly">
+            <div class="pillars">
+                <div>
+                    <h3>Computer Science</h3>
+                    <ul>
+                        <li>visualization</li>
+                        <li>structure, abstraction</li>
+                        <li>type systems</li>
+                        <li>multiple dispatch</li>
+                        <li>dynamic dispatch</li>
+                        <li>two-language problem</li>
+                        <li>expression problem</li>
+                        <li>functional programming</li>
+                        <li>arrays</li>
+                        <li>matrices</li>
+                        <li>dataframes</li>
+                        <li>git, github</li>
+                        <li>version control</li>
+                        <li>collaboration</li>
+                        <li>devops</li>
+                        <li>language design</li>
+                        <li>constraint solvers</li>
+                        <li>mathematical programming solvers</li>
+                        <li>heuristics</li>
+                        <li>DSLs</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Mathematics</h3>
+                    <ul>
+                        <li>matrices</li>
+                        <li>stencils</li>
+                        <li>univariate/multivariate functions</li>
+                        <li>vector calculus</li>
+                        <li>matrix calculus</li>
+                        <li>sequence convergence</li>
+                        <li>principal component analysis</li>
+                        <li>dimensionality reduction</li>
+                        <li>matrix rank</li>
+                        <li>projections, rotations</li>
+                        <li>eigenvalues</li>
+                        <li>singular value decomposition</li>
+                        <li>outliers, noise</li>
+                        <li>data bulk, data center</li>
+                        <li>statistics</li>
+                        <li>correlation</li>
+                        <li>random sampling</li>
+                        <li>probability density function</li>
+                        <li>monte carlo methods</li>
+                        <li>random walks</li>
+                        <li>continuous limit</li>
+                        <li>ordinary differential equations</li>
+                        <li>curve fitting</li>
+                        <li>partial differential equations</li>
+                        <li>finite differences</li>
+                        <li>discretization</li>
+                        <li>bifurcations</li>
+                        <li>hysteresis</li>
+                        <li>optimization</li>
+                        <li>gradient descent</li>
+                        <li>global optimization</li>
+                        <li>constrained optimization</li>
+                        <li>nonlinear optimization</li>
+                        <li>inverse modeling</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Applications</h3>
+                    <ul>
+                        <li>social science</li>
+                        <li>epidemic modelling</li>
+                        <li>agent based modelling</li>
+                        <li>climate economics</li>
+                        <li>climate science</li>
+                        <li>weather forecasting</li>
+                        <li>ocean/atmosphere models</li>
+                        <li>optimisation</li>
+                        <li>path finding</li>
+                        <li>image data</li>
+                        <li>image filtering</li>
+                        <li>seam carving</li>
+                        <li>data analysis</li>
+                        <li>model fitting</li>
+                        <li>random data</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h1>Details</h1>
+        <blockquote>
+            <p>See also the course repository <a href="https://github.com/UniMainzGeo">github.com/UniMainzGeo</a>.</p>
+        </blockquote>
+        <p></p>
+        <blockquote>
+            <p><em><strong><a href="./reviews/">What people are saying about the course!</a></strong></em></p>
+        </blockquote>
+        <h2 id="meet_our_staff">Meet our staff</h2>
+        <p><strong>Lecturer:</strong> <a href="https://www.geosciences.uni-mainz.de/geophysics-and-geodynamics/team/univ-prof-dr-boris-kaus/">Boris Kaus</a></p>
+        <p><strong>Technical lead:</strong> <a href="https://github.com/aelligp">Pascal Aellig</a></p>
+        <!-- <p><strong>Assistants:</strong> <a href="https://www.csail.mit.edu/person/bola-malek">Bola Malek</a>, <a href="https://scholar.harvard.edu/logankilpatrick/home">Logan Kilpatrick</a></p> -->
+        <p><strong>Guest lecturers:</strong>  <a href="https://ptsolvers.github.io/GPU4GEO/">Ludovic Raess</a>, <a href="https://ptsolvers.github.io/GPU4GEO/">Ivan Utkin</a>, <em>more to be announced</em></p>
+        <!-- <h2 id="get_the_t-shirt">Get the T-shirt</h2> -->
+        <!-- <p>There is a MIT Computational Thinking t-shirt available for those who really enjoyed the course, you can find it on the <a href="https://www.bonfire.com/introduction-to-computational-thinking-shirt/">Julia Language's Bonfire Shop</a>.</p>
+        <h2 id="introduction_video_from_fall_2020">Introduction video from Fall 2020</h2>
+        <iframe id="course-intro" width="100%" height="360" src="https://www.youtube.com/embed/vxjRWtWoD_w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+        <br> -->
+        <!-- <h2>How to cite</h2>
+        <p>If you use or are inspired by any material, would you be so kind to prominently display</p>
+        <blockquote style='font-style: normal;'>Some material on this website is based on: <br><em><b>Computational Thinking</b>, a live online Julia/Pluto textbook</em>. (<a href="computationalthinking.mit.edu">computationalthinking.mit.edu</a>)</blockquote> -->
+    </div>
+    <div class="page-foot">
+        <div class="copyright">
+            <a href="https://github.com/UniMainzGeo/JuliaIntro"><b>Edit this page on <img class="github-logo" src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a><br>
+            Website built with <a href="https://plutojl.org/">Pluto.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+        </div>
+    </div>
+</main>
+
+        </div>
+    </div>
+</body>
+</html>
