@@ -37,7 +37,6 @@ $(let d = f("description", nothing)
 end)
 
 <link rel="root" href="$(root_url)" />
-
 <link rel="icon" href="$(root_url)/assets/jgu_logo.ico" />
 
 <link rel="stylesheet" href="$(root_url)/assets/styles/index.css" type="text/css" />
@@ -133,6 +132,9 @@ $(pluto_head)
                     <a href="$(root_url)/semesters/">Summer Term 2023</a>
                 </div>
                 <div class="logos">
+                    <picture title="Johannes Gutenberg - University Mainz">
+                        <img src="$(root_url)/assets/jgu_logo.jpg">
+                    </picture>
                     <picture title="Julia Programming Language">
                         <source srcset="$(root_url)/assets/julia-logo-dark.svg" media="(prefers-color-scheme: dark)" />
                         <img src="$(root_url)/assets/julia-logo-color.svg">
@@ -149,14 +151,6 @@ $(pluto_head)
                 <h1>$(
                     f("title", basename(page.input.relative_path))
                 )</h1>
-                
-                <div class="video">
-
-                    <h4>Lecture Video</h4>
-                    <div>
-                        <lite-youtube videoid=$(f("youtube_id", "notfound")) params="modestbranding=1&rel=0"></lite-youtube>
-                    </div>
-                </div>
             </div>
             """) : nothing)
         $(content)
