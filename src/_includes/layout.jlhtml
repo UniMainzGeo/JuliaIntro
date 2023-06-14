@@ -133,7 +133,7 @@ $(pluto_head)
                 </div>
                 <div class="logos">
                     <picture title="Johannes Gutenberg - University Mainz">
-                        <img src="$(root_url)/assets/jgu_logo.jpg">
+                        <img src="$(root_url)/assets/jgu_logo.svg">
                     </picture>
                     <picture title="Julia Programming Language">
                         <source srcset="$(root_url)/assets/julia-logo-dark.svg" media="(prefers-color-scheme: dark)" />

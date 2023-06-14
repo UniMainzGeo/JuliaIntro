@@ -2,7 +2,8 @@
 # v0.19.25
 
 #> [frontmatter]
-#> title = "Introduction"
+#> order = "2"
+#> title = "1. Introduction and Installation"
 #> tags = ["welcome"]
 #> license = "MIT"
 #> description = "This is the first step towards programming in Julia"
@@ -76,7 +77,7 @@ The terminal will tell you the URL (e.g. **http://localhost:1234/**) and open a 
 # ╔═╡ Cell order:
 # ╟─60485fb8-c536-4473-b6ea-ca66dadf4c33
 # ╟─f2c32ef4-4178-44d4-9a20-f91c904c476f
-# ╟─33d824f1-e8ed-4a3c-8abf-fd77d8288e33
+# ╠═33d824f1-e8ed-4a3c-8abf-fd77d8288e33
 # ╟─fa85cebf-206c-4423-9d0e-55ea4a7912da
 # ╟─bc1d6928-1ed4-4c03-b2ca-a5c1578b141a
 # ╟─f13f5733-001e-450a-b879-8b291d95b7ca
