@@ -2,11 +2,11 @@
 # v0.19.25
 
 #> [frontmatter]
-#> title = "Introduction"
+#> title = "Introduction and Installation"
 #> tags = ["welcome"]
 #> license = "MIT"
 #> description = "This is the first step towards programming in Julia"
-#> layout = "md.jlmd"
+#> layout = "layout.jlhtml"
 
 using Markdown
 using InteractiveUtils
