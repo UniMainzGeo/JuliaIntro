@@ -2,7 +2,7 @@
 # v0.19.25
 
 #> [frontmatter]
-#> chapter = "2"
+#> chapter = "1"
 #> Authors = ["Pascal Aellig"]
 #> section = "3"
 #> order = "3"
@@ -38,7 +38,7 @@ begin
 end
 
 # ╔═╡ 60485fb8-c536-4473-b6ea-ca66dadf4c33
-md"#Test of GMG with GMT in Pluto _WIP_"
+md"# Test of GMG with GMT in Pluto _WIP_"
 
 # ╔═╡ f2c32ef4-4178-44d4-9a20-f91c904c476f
 md"**DISCLAIMER**: This webpage is a work in progress and if you got recommendations, feel free to [email us](mailto:paellig@uni-mainz.de)\

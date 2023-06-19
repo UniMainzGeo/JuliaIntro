@@ -2,9 +2,7 @@
 # v0.19.25
 
 #> [frontmatter]
-#> chapter = "1"
 #> Authors = ["Pascal Aellig"]
-#> section = "0"
 #> title = "Basic mathematics"
 #> tags = ["Basics"]
 #> license = "MIT"
