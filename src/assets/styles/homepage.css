@@ -154,6 +154,7 @@ blockquote {
     max-width: 30em;
     font-style: italic;
     background: #f9f9f9;
+    color: black;
     font-size: 1rem;
     margin: 0 auto;
 }

@@ -29,7 +29,7 @@ $(begin
 end)<html lang="en">
 <head>
 
-<title>$(f("title", splitext(basename(page.input.relative_path))[1])) — Julia for Geodynamics — JGU</title>
+<title>$(f("title", splitext(basename(page.input.relative_path))[1])) — Introduction to Julia — JGU</title>
 $(let d = f("description", nothing)
     if d !== nothing
         @htl("""<meta name="description" content=$(d) />""")
@@ -37,7 +37,9 @@ $(let d = f("description", nothing)
 end)
 
 <link rel="root" href="$(root_url)" />
+
 <link rel="icon" href="$(root_url)/assets/jgu_logo.ico" />
+<link rel="icon" href="$(root_url)/assets/jgu_logo.svg" type="image/svg+xml">
 
 <link rel="stylesheet" href="$(root_url)/assets/styles/index.css" type="text/css" />
 <link rel="stylesheet" href="$(root_url)/assets/styles/layout.css" type="text/css" />
@@ -65,7 +67,7 @@ $(pluto_head)
         <ul>
             <li class="sidebar-about">
                 <div class="course-title">
-                    <h1><a href="$(root_url)"><span>Julia for</span> <span>Geodynamics</span></a></h1>
+                    <h1><a href="$(root_url)"><span>Introduction</span> <span>to Julia</span></a></h1>
                     <h2><span>Start your modelling journey now!</span></h2>
                 </div>
                 <div class="authors">
@@ -101,6 +103,7 @@ $(pluto_head)
                         name = get(output.frontmatter, "title", basename(input.relative_path))
                         desc = get(output.frontmatter, "description", nothing)
                         tags = get(output.frontmatter, "tags", String[])
+                        chapter = get(output.frontmatter, "chapter", nothing)
                         active = page.url == other_page.url
                         
                         homework_number = get(output.frontmatter, "homework_number", nothing)
@@ -134,10 +137,6 @@ $(pluto_head)
                 <div class="logos">
                     <picture title="Johannes Gutenberg - University Mainz">
                         <img src="$(root_url)/assets/jgu_logo.svg">
-                    </picture>
-                    <picture title="Julia Programming Language">
-                        <source srcset="$(root_url)/assets/julia-logo-dark.svg" media="(prefers-color-scheme: dark)" />
-                        <img src="$(root_url)/assets/julia-logo-color.svg">
                     </picture>
                 </div>
             </li>

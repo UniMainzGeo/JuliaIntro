@@ -2,6 +2,9 @@
 # v0.19.25
 
 #> [frontmatter]
+#> chapter = "1"
+#> Authors = ["Pascal Aellig"]
+#> section = "0"
 #> title = "Basic mathematics"
 #> tags = ["Basics"]
 #> license = "MIT"
@@ -490,7 +493,7 @@ Note that this invokes the default terminal on your operating system, so under w
 
 #### 9.2 Online help
 
-The official julia [manual](https://docs.julialang.org/en/v1/) is a good place to start. Many of the julia packages are hosted on github and have help pages as well. An example, which we will use here, is `GeophysicalModelGenerator.jl`."
+The official julia [manual](https://docs.julialang.org/en/v1/) is a good place to start. Many of the julia packages are hosted on github and have help pages as well. An example, which we will use here, is [GeophysicalModelGenerator.jl](https://github.com/JuliaGeodynamics/GeophysicalModelGenerator.jl`)."
 
 # ╔═╡ 90536008-4830-42ea-986d-7457b60ffa88
 TableOfContents(title="Introduction to Julia by AG Geophysik at the University of Mainz", indent=true, depth=4, aside=true)

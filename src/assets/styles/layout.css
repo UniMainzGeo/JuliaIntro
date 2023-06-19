@@ -206,7 +206,7 @@
 
 /* TRACK CHOOSER */
 
-/* .track-chooser {
+.track-chooser {
     margin-top: 3em;
     padding: 0.5em;
     border: 3px solid var(--track-bg-accent);
@@ -233,7 +233,7 @@
 
 .track-chooser select {
     max-width: 100%;
-} */
+}
 
 /* SIDEBAR LOGO */
 
