@@ -134,7 +134,7 @@ y = m.^2 .+ 1
 md"Note the dot . here, which tells julia that every entry of x should be squared and 1 is added. If you want a vector with values, they should be separated by commas:"
 
 # ╔═╡ 0dc8b890-9d0c-42bf-879c-cb9edbd27593
-f= [1.2, 3, 5, 6]
+k= [1.2, 3, 5, 6]
 
 # ╔═╡ 006f5950-0834-4773-8541-66112307c611
 md" ### 3 Matrixes"
@@ -256,9 +256,6 @@ correct(md"You made it, already halfway")
 # ╔═╡ 5c61be02-aa0e-4a37-8249-2d46b7afed9d
 md" ### 4. Matrix arithmetic"
 
-# ╔═╡ 2b4a566b-6921-46a9-99b9-840f027626d8
-
-
 # ╔═╡ 9df04855-806d-4e55-a5a3-f115ec6c8ba2
 begin
 a2=[1 2 3; 4 5 6; 7 8 10]
@@ -302,10 +299,10 @@ a2.*a2
 correct(md"Nice! Now lets plot and visualise something")
 
 # ╔═╡ 42d56970-e31f-4389-9cc2-5bf1b5aab059
-md" ### 3. Plotting"
+md" ### 5. Plotting"
 
 # ╔═╡ 61831b0e-167e-4883-9fce-c8cc23bac846
-md" #### 3.1 Adding plotting packages
+md" #### 5.1 Adding plotting packages
 As you already learned in the installation guide, Julia has an internal package manager, where you can add different packages.
 Now we want to plot something, therefore we need Plots.jl or Makie.jl
 
@@ -340,7 +337,7 @@ w=t.^2 .+ 1
 plot(t,w, xlabel="x", ylabel="y axis", title="my first plot",label=:none, color=:red)
 
 # ╔═╡ 3152da7b-212e-4385-8ae7-434ee5d58d16
-almost(md"Oops, we are currently using two packages that have a function called plot(). You need to specify which one you want by Plots.plot() or the same with WGLMakie")
+almost(md"Oops, we are currently using two packages that have a function called `plot()`. You need to specify which one you want by `Plots.plot()`!")
 
 # ╔═╡ 6763368f-26c5-4939-9489-529b9182959a
 Plots.plot(t,w, xlabel="x", ylabel="y axis", title="my first plot",label=:none, color=:red)
@@ -359,10 +356,141 @@ contour(x,y,z,50)| contour(x,y,z,level=50)
 contourf(x,y,z)	| contour(x,y,z,level=50,fill=true)"
 
 # ╔═╡ c82ae90f-f05c-46d5-a7cc-aac73093e1ab
+md" ### 7. Functions"
+
+# ╔═╡ ff98ceab-6eb5-434f-a316-4ba797dc64d1
+f(x) = x.^2 .+ 10
+
+# ╔═╡ 78993e93-2220-49fc-9f67-f69422e9eaaa
+md"You can now use this function with scalars, vectors or arrays:"
+
+# ╔═╡ 56a50bbb-e0f1-4e14-bd4b-06bfa520c704
+f(10)
+
+# ╔═╡ 97713488-a15e-4f88-96cd-495799a8776e
+l=1:3
+
+# ╔═╡ 0ff97250-c833-4a94-b77c-a87660c02ed5
+f(l)
+
+# ╔═╡ cb662f19-4785-4969-93d5-55351370b956
+p=[1 2; 3 4]
+
+# ╔═╡ aca11409-f870-4720-b6ea-2300a3daac6e
+f(p)
+
+# ╔═╡ 8c741f59-8f79-4919-99eb-df4e56bcb68d
+md"Functions of course don’t have to be one-liners, so you can also define it as:"
+
+# ╔═╡ e3f5d422-810e-4069-a152-3cc219ae1627
+function f1(x)
+         y = x.^2 .+ 11
+         return y
+       end
+
+# ╔═╡ 9cde0035-bad1-4b35-b236-341053b5bf40
+x3=1:1e6;
+
+# ╔═╡ 1994423d-5e76-4f24-b580-244b7be7ff65
+md"It turns out that julia has a handy macro, called `@time`, with which you can record the time that a function took."
+
+# ╔═╡ 0b319c47-d1f6-4ffd-8da1-2514312540b1
+@time f1(x3)
+
+# ╔═╡ 97e72ba5-f24e-49a6-bb9a-6a6433a13d68
+md"As you can see, the function runs super quick. That's because the code is precompiled and only needs to run the function, which creates 2 allocations.
+
+Also note that you need to restart the REPL on VS Code or your Julia session every time you redefine a function or a structure."
+
+# ╔═╡ 9f3acabd-233a-412e-9595-1afddd0958b4
+md" ### 8. Scripts"
+
+# ╔═╡ c3e585d9-5cae-4e8f-bcdf-afa1ffb33f6d
+md"In general, you want to put your code in a julia script so you don’t have to type it always in the REPL. Doing that is simple; you simple save it as a textfile that had has *.jl as an ending.
+_Note: When working in scripts you need to state what packages you want to use at the beginning with `using Plots` etc.
+A simple example is the following script:"
+
+# ╔═╡ a20385a5-3025-4648-a379-d8fde9b890a7
+begin
+	function rosenbrock(x,y; a=1,b=100)
+	   xt = x'     # transpose  
+	   f  = (a .- xt).^2 .+ b.*(y .- xt.^2).^2
+	   return f
+	end
+	x5 = range(-2.0,2.0,length=50)
+	y5 = range(-1.0,1.5,length=50)
+	t1 = rosenbrock(x5,y5)
+		
+	# Create a contourplot
+	Plots.contour(x5,y5,t1, levels=0:10:200, fill=true, 
+	       xlabel="X", ylabel="y", title="rosenbrock", 
+	       color=:roma, clim=(1,200))
+end
+
+# ╔═╡ 288afe33-8134-4522-a64d-516e5eb70302
+md"Note that the rosenbrock function has optional parameters (a,b). Calling it with only X,Y will invoke the default parameters, but you can specify the optional ones with f=rosenbrock(x,y, b=200,a=3). You can save this as a script and run it in the julia REPL in the following way:"
+
+# ╔═╡ fdfdc9ea-05bc-4e89-a55a-5a727876411f
+md"`include()` _Note: Within the Parantheses, there must be quotation marks_"
+
+# ╔═╡ f2693bec-34a5-4003-9c4b-9c0c3c1cfddd
+md"Be aware that you need to be in the same directory as the script (see below on how you can change directories using the build-in shell in julia, by typing ; in the REPL). The result looks like (have a look at how we customized the colormap, and added info for the axes)."
+
+# ╔═╡ 2748a285-3dae-4bdb-b000-6a0dc80c927f
+md" ### 9. Help"
+
+# ╔═╡ ec5fc1e4-2020-4fc3-8290-6b9f27a2a7a3
+md"In general, you can get help for every function by typing `?` which brings you to the help terminal. Next type the name of the function. For example, lets find out how to compute the average of an array
+```julia
+julia>?mean
+```
+You can add help info to your own functions by adding comments before the function, using quotation marks."
+
+# ╔═╡ 1029fbdd-9666-465e-8aba-31e5dc73190e
+
+""" 
+    y = f2_withhelp(x)
+
+Computes the square of `x` and adds 10 
+
+Example
+=======
+
+julia> x=1:10
+julia> y = f2_withhelp(x)
+10-element Vector{Int64}:
+  11
+  14
+  19
+  26
+  35
+  46
+  59
+  74
+  91
+ 110
+"""
+function f2_withhelp(x)
+    y = x.^2 .+ 10
+    return y
+end
 
 
-# ╔═╡ 813828e0-ab7c-45a6-94b4-9670b428de97
+# ╔═╡ 5eaec28b-37cf-45c2-8012-cd06e2b51ae2
+md"#### 9.1 Built-in terminal"
 
+# ╔═╡ 7ce669b0-bf34-41c8-b53e-b2b90dfccca4
+md"Julia has a built-in terminal, which you can reach by typing ;. This comes in handy if you want to check in which directory you are, change directories, or look at the files there.
+```julia
+julia>;
+shell> pwd
+/Users/kausb
+```
+Note that this invokes the default terminal on your operating system, so under windows the commands are a but different than under linux. Once you are done with the terminal, you get back to the REPL, by using the backspace.
+
+#### 9.2 Online help
+
+The official julia [manual](https://docs.julialang.org/en/v1/) is a good place to start. Many of the julia packages are hosted on github and have help pages as well. An example, which we will use here, is `GeophysicalModelGenerator.jl`."
 
 # ╔═╡ 90536008-4830-42ea-986d-7457b60ffa88
 TableOfContents(title="Introduction to Julia by AG Geophysik at the University of Mainz", indent=true, depth=4, aside=true)
@@ -2187,7 +2315,6 @@ version = "1.4.1+0"
 # ╟─57631bf1-3368-4184-989c-ab28c42df09e
 # ╟─f5673d4d-943a-41f0-886e-5004a3e4c6c7
 # ╟─5c61be02-aa0e-4a37-8249-2d46b7afed9d
-# ╠═2b4a566b-6921-46a9-99b9-840f027626d8
 # ╠═9df04855-806d-4e55-a5a3-f115ec6c8ba2
 # ╟─d749b9bc-bee9-43c9-9a86-332645ab4237
 # ╠═56595d1d-45e4-4178-a079-ec00e4786dc3
@@ -2210,9 +2337,32 @@ version = "1.4.1+0"
 # ╟─3152da7b-212e-4385-8ae7-434ee5d58d16
 # ╠═6763368f-26c5-4939-9489-529b9182959a
 # ╟─795244b5-8caf-47f4-9fc1-c2df0fa403e2
-# ╠═c82ae90f-f05c-46d5-a7cc-aac73093e1ab
-# ╠═813828e0-ab7c-45a6-94b4-9670b428de97
-# ╠═9d4b4c1c-d52c-48f8-8a62-a71a033816ea
+# ╟─c82ae90f-f05c-46d5-a7cc-aac73093e1ab
+# ╠═ff98ceab-6eb5-434f-a316-4ba797dc64d1
+# ╟─78993e93-2220-49fc-9f67-f69422e9eaaa
+# ╠═56a50bbb-e0f1-4e14-bd4b-06bfa520c704
+# ╠═97713488-a15e-4f88-96cd-495799a8776e
+# ╠═0ff97250-c833-4a94-b77c-a87660c02ed5
+# ╠═cb662f19-4785-4969-93d5-55351370b956
+# ╠═aca11409-f870-4720-b6ea-2300a3daac6e
+# ╟─8c741f59-8f79-4919-99eb-df4e56bcb68d
+# ╠═e3f5d422-810e-4069-a152-3cc219ae1627
+# ╠═9cde0035-bad1-4b35-b236-341053b5bf40
+# ╟─1994423d-5e76-4f24-b580-244b7be7ff65
+# ╠═0b319c47-d1f6-4ffd-8da1-2514312540b1
+# ╟─97e72ba5-f24e-49a6-bb9a-6a6433a13d68
+# ╟─9f3acabd-233a-412e-9595-1afddd0958b4
+# ╟─c3e585d9-5cae-4e8f-bcdf-afa1ffb33f6d
+# ╠═a20385a5-3025-4648-a379-d8fde9b890a7
+# ╟─288afe33-8134-4522-a64d-516e5eb70302
+# ╟─fdfdc9ea-05bc-4e89-a55a-5a727876411f
+# ╟─f2693bec-34a5-4003-9c4b-9c0c3c1cfddd
+# ╟─2748a285-3dae-4bdb-b000-6a0dc80c927f
+# ╟─ec5fc1e4-2020-4fc3-8290-6b9f27a2a7a3
+# ╠═1029fbdd-9666-465e-8aba-31e5dc73190e
+# ╟─5eaec28b-37cf-45c2-8012-cd06e2b51ae2
+# ╟─7ce669b0-bf34-41c8-b53e-b2b90dfccca4
+# ╟─9d4b4c1c-d52c-48f8-8a62-a71a033816ea
 # ╟─90536008-4830-42ea-986d-7457b60ffa88
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
