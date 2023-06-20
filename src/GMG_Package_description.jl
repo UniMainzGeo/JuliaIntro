@@ -9,7 +9,7 @@
 #> title = "Package Description"
 #> tags = ["GMG", "lecture"]
 #> layout = "layout.jlhtml"
-#> description = "Package Description"
+#> description = "Geophysical Model Generator"
 #> License = "MIT"
 
 using Markdown
