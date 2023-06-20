@@ -5,7 +5,7 @@ layout: "layout.jlhtml"
 <link rel="stylesheet" href="$(root_url)/assets/styles/homepage.css" type="text/css" />
 
 <div id="title" class="banner">
-    <h1>Introduction to Julia: <strong>A new approach to computational Geodynamcis</strong></h1>
+    <h1>Introduction to Julia: <strong>A new approach to computational Geodynamics</strong></h1>
 </div>
 <!-- <img src="$(root_url)/assets/JGU_MAGMA.svg" class="logo"> -->
 <div class="page-head">
