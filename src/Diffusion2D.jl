@@ -4,9 +4,9 @@
 #> [frontmatter]
 #> chapter = "2"
 #> Authors = "Ludovic Räss, Ivan Utkin"
-#> section = "1.5"
-#> order = "1.5"
-#> title = "Diffusion 2D"
+#> section = "2.2"
+#> order = "2.2"
+#> title = "Exercise: Diffusion 2D"
 #> tags = ["bcn"]
 #> layout = "layout.jlhtml"
 

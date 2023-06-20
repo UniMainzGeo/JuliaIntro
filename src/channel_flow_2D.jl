@@ -4,9 +4,9 @@
 #> [frontmatter]
 #> chapter = "2"
 #> Authors = "Ludovic Räss, Ivan Utkin"
-#> section = "3"
-#> order = "3"
-#> title = "Channel Flow 2D"
+#> section = "2.4"
+#> order = "2.4"
+#> title = "Exercise: Channel Flow"
 #> tags = ["bcn"]
 #> layout = "layout.jlhtml"
 #> description = "2D Channel Flow example of the BCN MasterClass 2023"
