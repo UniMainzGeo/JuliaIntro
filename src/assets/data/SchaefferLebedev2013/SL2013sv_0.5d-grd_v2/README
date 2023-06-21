@@ -1,0 +1,153 @@
+SL2013sv: A global, vertically-polarized shear speed model of the upper
+            mantle and transition zone.
+Version:  v2.0, July 2014 A. Schaeffer, S. Lebedev
+          SL2013sv_0.5d-grd
+Contact:  Andrew Schaeffer (aschaeff@cp.dias.ie)
+          Sergei Lebedev   (sergei@cp.dias.ie)
+          Geophysics Section,
+          Dublin Institute for Advanced Studies
+          Dublin, Ireland
+Website:  http://www.dias.ie/~aschaeff/SL2013sv.html
+
+TYPE:
+ This contains files with the model pre-gridded onto an evenly-spaced
+ lat-lon grid (0.5 degrees). For the model grid (the points solved for
+ in the inversion), please use the archive: SL2013sv_tri-grd
+
+If you have any questions regarding the methodology or the construction
+of the model, please contact the authors. If you use the model, we would
+request that you cite the reference indicated below, and appreciate
+your feedback regarding the model and its application. 
+
+Citation:
+Schaeffer, A. and S. Lebedev, 2013. Global shear speed structure of the
+   upper mantle and transition zone, Geophys. J. Int., 194 (1), 417-449,
+   doi:10.1093/gji/ggt095
+
+
+------------------------------------------------------------------------
+Summary: construction of the model.
+The inversion is parameterized to solve for 3D perturbations in P, S and
+2-Psi Azimuthal Anisotropy (S) with respect to a 3D global reference
+model. It is computed using a multi-step procedure: seismograms are fit
+using Automated Multimode Inversion to generate a set of linear
+equations describing sensitivity-volume average perturbations with
+respect to the 3D reference model; the linear equations from the
+successfully fit seismograms are then combined together into one large
+linear system, and solved using LSQR; finally, systematic outlier analysis
+is carried out to select only the most mutually consistent seismograms for
+use in the final model. SL2013sv is constrained by more than half-a-
+million vertical-component, Rayleigh-wave seismograms, selected from a
+dataset of >700,000 successful fits.
+
+The model is parmeterized on a set of concentric shells. Each shell
+consists of knots on a triangular grid, which have an approximately
+constant inter-knot spacing of around 280 km (7842 shell knots total).
+Vertically, there are 18 S-velocity stem nodes, parameterized using
+triangular basis functions, at depths:
+7, 20, 36, 56, 80, 110, 150, 200, 260, 330, 410-, 410+, 485, 585, 660-,
+660+, 810, and 1008 km.
+For P, there are 10 stem nodes at depths:
+7, 20, 36, 60, 90, 150, 240, 350, 485, and 585 km.
+Between the knots of the grid, values are computed using linear
+interpolation.
+
+Mantle discontinuities are parameterized using pairs of knots, with
+410+ and 660+ at the top and 410- and 600- at the bottom of the
+discontinuity. In the model, the top knots are represented as 410 and 660,
+and the bottom ones as 411 and 661. In total there are 501,888 unknown
+model parameters:
+7842 shell nodes x (18x3 S parameters + 10 P parameters). The x3 S
+parameters in depth are for the azimuthally isotropic S velocity and the
+two azimuthal anisotropy terms.
+
+The reference model is a 3D reference model which consists of two parts.
+Beneath the Moho, the reference model is 1D, and based on AK135. We
+re-compute AK135 to a reference period of 50s. The Moho depth varies
+spatially and is defined by the 3D crustal reference model, which is
+based on Crust2.0. As a result, the reference velocity in the crust
+varies as a function of lat-lon. Finally, a set of 1D velocity shifts
+are applied across the depth of range of the model. These velocity
+shifts are derived from an initial smoothed inversion.
+
+Although the model includes both P velocity and 2-Psi S-wave azimuthal
+anisotropy, the files included in this distribution are only the Vsv
+components. The 2-Psi azimuthal anisotropy will be distributed in a
+later release.
+
+For more details on the methodology and the model, please see the
+aforementioned reference, Schaeffer & Lebedev, 2013.
+
+
+
+------------------------------------------------------------
+This archive contains the following files:
+  SL2013sv_n-0.5d.mod
+  SL2013sv_25k-0.5d.mod
+  README (this file)
+
+SL2013sv_n-0.5d.mod:
+ The Vsv model at the model shell nodes, interpolated onto an evenly-
+ sampled 0.5 degree lat-lon grid.
+
+SL2013sv_25k-0.5d.mod:
+ The Vsv model interpolated onto an evenly-sampled 0.5 degree lat-lon
+ grid horizontally, sampled more densely in depth:
+  25--700km every 25km
+
+The columns in both model files are:
+# Depth (km)   lon         lat      dVs (m/s)  VsRef (m/s)   dVs (%)   VsAbs (m/s)   VsMean (m/s)   dVsM (%)
+20.0        -180.0000    -90.0000   -211.0678   3722.5132    -5.6700    3511.4454     4177.5300     -15.9445
+20.0        -179.5000    -90.0000   -211.0678   3722.5132    -5.6700    3511.4454     4177.5300     -15.9445
+
+
+The perturbations (column 4) are in m/s from the reference model (column 5),
+also in m/s. Please see the note below about the reference model. The
+perturbations in percentage (column 6) are with respect to the 3D reference
+model also. Column 7 is the absolute velocity (dVs + VsRef) in m/s. Finally,
+Column 8 is the mean velocity computed for that depth, with Column 9 being
+the perturbation with respect to the mean.
+
+
+
+***PLEASE NOTE***
+In the mantle, perturbations are with respect to a 1D model very similar
+to AK135. At shallower depths (i.e., shallower than the Moho) the
+perturbations are with respect to the 3D crustal reference model, which
+is given in column 5. Therefore, perturbations (columns 4 and 6) plotted
+at crustal depths do not reflect the total variation in amplitude (peak-
+to-peak, at that depth), given that there is also variation in the
+reference model. To properly represent the total peak-to-peak range in
+pertubrations, use the perturbations with respect to the mean.
+
+
+------------------------------------------------------------
+*** Plotting ***
+The model can be plotted using GMT. First grid files must be generated, then
+they can be plotted, using a colourmap. For example, 150 km depth:
+ ** Griding **
+  * Absolute Velocity *
+     grep "^150.0 " SL2013sv_n-0.5d.mod | awk '{print $2,$3,$7/1000}' | xyz2grd -Dm/m/m/1/0/=/= -G0150.g.abs.grd -Rd -I0.5 -fog
+  * Relative to 3D reference *
+     grep "^150.0 " SL2013sv_n-0.5d.mod | awk '{print $2,$3,$6}' | xyz2grd -Dm/m/m/1/0/=/= -G0150.g.3DP.grd -Rd -I0.5 -fog
+  * Relative to depth mean *
+     grep "^150.0 " SL2013sv_n-0.5d.mod | awk '{print $2,$3,$9}' | xyz2grd -Dm/m/m/1/0/=/= -G0150.g.dmP.grd -Rd -I0.5 -fog
+ ** CPT Files
+     makecpt -Chaxby -T`grdinfo -C 0150.g.abs.grd | awk '{print $6"/"$7"/0.1"}'` -D -I > 0150.abs.cpt
+     makecpt -Chaxby -T-8/8/1 -D -I > 0150.P.cpt
+ ** Plot
+     (grdview -JN0/5i -Rd -Qi300 -Ba90f30/a30f15 -C0150.abs.cpt 0150.g.abs.grd -K ; \
+	pscoast -J -R -Di -A5000 -W0.5p -N1/0.3p,30 -O -K ; \
+        psscale -D2.5/-0.25/2/0.15h -C0150.abs.cpt -Ba0.25g0.25:"150 km": -O) > 0150.abs.ps
+     (grdview -JN0/5i -Rd -Qi300 -Ba90f30/a30f15 -C0150.P.cpt 0150.g.dmP.grd -K ;   \
+	pscoast -J -R -Di -A5000 -W0.5p -N1/0.3p,30 -O -K ; \
+	psscale -D2.5/-0.25/2/0.15h -C0150.P.cpt -E -Ba2f1:"150 km": -O) > 0150.dmP.ps
+     (grdview -JN0/5i -Rd -Qi300 -Ba90f30/a30f15 -C0150.P.cpt 0150.g.3DP.grd -K ;   \
+	pscoast -J -R -Di -A5000 -W0.5p -N1/0.3p,30 -O -K ; \
+	psscale -D2.5/-0.25/2/0.15h -C0150.P.cpt -E -Ba2f1:"150 km": -O) > 0150.3DP.ps
+
+
+
+------------------------------------------------------------
+15-Jul-2014, A. Schaeffer, S Lebedev
+
