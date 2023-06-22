@@ -40,10 +40,10 @@ Too good to be true? Hold on 🙂 ...
 - It's around for more than a decade
 - It shows massive performance gain compared to serial CPU computing
 - First exascale supercomputer, Frontier, is full of GPUs
-![Frontier](/assets/bcn/frontier.png#badge)
+![Frontier](/https://github.com/UniMainzGeo/JuliaIntro/blob/main/src/assets/bcn/frontier.png#badge)
 
 #### Performance that matters
-![cpu_gpu_evo](/assets/bcn/cpu_gpu_evo.png#badge)
+![cpu_gpu_evo](https://github.com/UniMainzGeo/JuliaIntro/blob/main/src/assets/bcn/cpu_gpu_evo.png#badge)
 
 Taking a look at a recent GPU and CPU:
 - Nvidia Tesla A100 GPU

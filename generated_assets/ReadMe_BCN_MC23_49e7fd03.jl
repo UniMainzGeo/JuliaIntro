@@ -22,7 +22,7 @@ md"# Galileo23 Master-class 1 - GPU HPC in Julia
 
 _by Ludovic Räss and Ivan Utkin (ETH Zurich)_
 
-👀 **ATTENTION:** The content was just updated, make sure to `git pull` before getting started!
+![Galileo Conference 2023](https://github.com/UniMainzGeo/JuliaIntro/blob/main/src/assets/bcn/GalileoConf.png#badge)
 
 ## Content
 - **Getting started**

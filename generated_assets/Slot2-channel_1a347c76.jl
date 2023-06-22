@@ -18,7 +18,7 @@ md"## Channel Flow 2D
 
 The final step is to now turn the diffusion script into a channel flow script with non-linear viscosity and a free-surface.
 
-![channel flow](/assets/bcn/model_setup.png#badge)
+![channel flow](https://github.com/UniMainzGeo/JuliaIntro/blob/main/src/assets/bcn/model_setup.png)
 
 We consider the shear-driven Stokes flow with power-law rheology in a quasi-2D setup:
 
@@ -116,7 +116,7 @@ end
 ```
 Running the code should produce a figure similar to:
 
-![channel flow](/assets/bcn/channel_flow.png)
+![channel flow](https://github.com/UniMainzGeo/JuliaIntro/blob/main/src/assets/bcn/channel_flow.png)
 > 💡 If you run out of ideas, check-out the [scripts_s2/channel_flow_2D.jl](https://github.com/PTsolvers/Galileo23-MC1-GPU/blob/main/scripts_s2/channel_flow_2D.jl) script and try replacing the `??` by some more valid content.
 > 
 > The solution script can be found at [scripts_solutions/channel_flow_2D_sol.jl](https://github.com/PTsolvers/Galileo23-MC1-GPU/blob/main/scripts_solutions/channel_flow_2D_sol.jl)
